@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrícola San José · Sistemas de gestión</title>
+<style>
+  :root{
+    --pizarra:#2f3a3f; --pizarra2:#3d4a50; --tinta:#1e2528;
+    --oro:#a8894f; --oro-cl:#c9b285; --linea:#3d4a50;
+    --fondo:#eceeed; --panel:#ffffff; --txt:#2b3236; --gris:#7c868b;
+    --verde:#4f7a4d; --ambar:#c48a2c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI',system-ui,Arial,sans-serif;
+    background:linear-gradient(160deg,var(--pizarra) 0%,var(--tinta) 100%);
+    color:#fff;min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .head{text-align:center;margin-bottom:38px;}
+  .marca{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--oro-cl);font-weight:600;}
+  .head h1{font-size:30px;font-weight:600;letter-spacing:.5px;margin-top:8px;}
+  .head .linea{width:46px;height:2px;background:var(--oro);margin:16px auto 0;}
+  .head .sub{font-size:13px;color:#c2cacd;margin-top:14px;}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:820px;width:100%;}
+  @media(max-width:720px){.grid{grid-template-columns:1fr;max-width:360px;}}
+
+  .card{
+    background:var(--panel);color:var(--txt);border-radius:14px;padding:26px 22px;
+    text-decoration:none;display:flex;flex-direction:column;align-items:center;text-align:center;
+    border:1px solid rgba(255,255,255,.08);transition:transform .18s,box-shadow .18s;
+    position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--oro);}
+  .card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.28);}
+  .card.soon{opacity:.62;cursor:default;}
+  .card.soon:hover{transform:none;box-shadow:none;}
+
+  .ico{width:56px;height:56px;margin-bottom:16px;color:var(--pizarra);}
+  .ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .card h2{font-size:17px;color:var(--pizarra);font-weight:700;letter-spacing:.3px;}
+  .card p{font-size:12.5px;color:var(--gris);margin-top:6px;line-height:1.5;}
+  .tag{margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+       padding:4px 12px;border-radius:20px;}
+  .tag.go{background:#e7efe6;color:var(--verde);}
+  .tag.soon{background:#f7efdd;color:var(--ambar);}
+
+  .pie{margin-top:34px;font-size:11.5px;color:#a9b2b5;text-align:center;}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="marca">Agrícola San José</div>
+    <h1>Sistemas de gestión</h1>
+    <div class="linea"></div>
+    <div class="sub">Elige el sistema al que quieres entrar</div>
+  </div>
+
+  <div class="grid">
+    <!-- FITO -->
+    <a class="card" href="https://febustamante.github.io/inventario/">
+      <div class="ico">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 22V12"/>
+          <path d="M12 12C12 8 9 5 5 5c0 4 3 7 7 7z"/>
+          <path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/>
+          <path d="M8 22h8"/>
+        </svg>
+      </div>
+      <h2>Fito</h2>
+      <p>Inventario y control fitosanitario</p>
+      <span class="tag go">Entrar</span>
+    </a>
+
+    <!-- MAQUINARIA -->
+    <a class="card" href="https://febustamante.github.io/MAQUINARIA/">
+      <div class="ico">
+        <svg viewBox="0 0 24 24">
+          <circle cx="7" cy="17" r="3"/>
+          <circle cx="17" cy="17" r="2"/>
+          <path d="M4 17V9h6l3 4h4a2 2 0 0 1 2 2v2"/>
+          <path d="M10 9V6h3l2 3"/>
+        </svg>
+      </div>
+      <h2>Maquinaria</h2>
+      <p>Flota, costos y parte diario</p>
+      <span class="tag go">Entrar</span>
+    </a>
+
+    <!-- FOLIOS -->
+    <a class="card" href="https://febustamante.github.io/CONTROL-LABORES/">
+      <div class="ico">
+        <svg viewBox="0 0 24 24">
+          <path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"/>
+          <rect x="8" y="2" width="8" height="4" rx="1"/>
+          <path d="M8 11h8M8 15h5"/>
+        </svg>
+      </div>
+      <h2>Folios</h2>
+      <p>Control de labores diarias</p>
+      <span class="tag go">Entrar</span>
+    </a>
+  </div>
+
+  <div class="pie">Cada sistema pide su propio acceso al entrar.</div>
+</body>
+</html>
